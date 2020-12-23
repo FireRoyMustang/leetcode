@@ -1,11 +1,27 @@
 package main
 
+/**
+原地旋转输入矩阵，使其变为:
+[
+  [15,13, 2, 5],
+  [14, 3, 4, 1],
+  [12, 6, 8, 9],
+  [16, 7,10,11]
+]
+
+*/
+import "fmt"
+
 func main() {
-	matrix := [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	// matrix := [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	matrix := [4][4]int{{5, 1, 9, 11},
+		{2, 4, 8, 10},
+		{13, 3, 6, 7},
+		{15, 14, 12, 16}}
 	var matrix2 [][]int = make([][]int, 0)
-	matrix2 = append(matrix2, matrix[0][:])
-	matrix2 = append(matrix2, matrix[1][:])
-	matrix2 = append(matrix2, matrix[2][:])
+	for i := 0; i < len(matrix); i++ {
+		matrix2 = append(matrix2, matrix[i][:])
+	}
 	rotate(matrix2)
 }
 
@@ -47,9 +63,12 @@ func rotate(matrix [][]int) {
 		matrix[length-1-i][0] = matrix[length-1][length-1-i]
 		matrix[length-1][length-1-i] = matrix[i][length-1]
 		matrix[i][length-1] = tmpNum
-		// fmt.Println(matrix)
+		fmt.Println(matrix)
+		// for j := 0; j < length; j++ {
+		// 	fmt.Println(matrix[j])
+		// }
 	}
-	rotate(matrix[1 : length-1])
+	// rotate(matrix[1 : length-1][1 : length-1])
 }
 
 // tmp := make([]int, 4)
