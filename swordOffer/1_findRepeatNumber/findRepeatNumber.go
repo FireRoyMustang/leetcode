@@ -9,5 +9,13 @@ func main() {
 }
 func findRepeatNumber(nums []int) int {
 	length := len(nums)
-	arr := make([]int)
+	arr := make([]int, length)
+	for i := 0; i < length; i++ {
+		arr[nums[i]]++
+		if arr[nums[i]] >= 2 {
+			return nums[i]
+		}
+	}
+	return -1
+
 }
