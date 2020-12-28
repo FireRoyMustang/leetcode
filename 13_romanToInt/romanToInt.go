@@ -2,8 +2,9 @@ package main
 
 import "fmt"
 
+// "IIX"这种是不允许的
 func main() {
-	testStr := []string{"III", "IV", "IIX", "IX", "LVIII", "MCMXCIV"}
+	testStr := []string{"III", "IV", "IX", "LVIII", "MCMXCIV"}
 	for _, str := range testStr {
 		fmt.Printf("%s: %d\n", str, romanToInt(str))
 	}
