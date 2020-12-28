@@ -17,6 +17,8 @@ func main() {
 	fmt.Println(s)
 	test(10)
 	fmt.Println("x:", x)
+	x := 15.2
+	fmt.Println(x % 2)
 }
 func test(n int) {
 	x = n
