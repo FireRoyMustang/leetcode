@@ -12,32 +12,28 @@ func exist(board [][]byte, word string) bool {
 	if len(word) == 0 {
 		return true
 	}
-	row, col := findChar(word[0], board)
-	if row == -1 {
-		return false
+	rows, cols := len(board), len(board[0])
+	m := make([][]bool, len(board))
+	for i := 0; i < len(board); i++ {
+		m[i] = make([]bool, cols)
 	}
-	for index := 1; index < len(word); index++ {
-
-	}
-	return true
-}
-func findChar(char byte, board [][]byte) (int, int) {
-	rows := len(board)
-	if rows == 0 {
-		return -1, -1
-	}
-	cols := len(board[0])
-	for row := 0; row < rows; row++ {
-		for col := 0; col < cols; col++ {
-			if board[row][col] == char {
-				return row, col
+	for i := 0; i < rows; i++ {
+		for j := 0; j < cols; j++ {
+			if backTrace(board, rows, cols, i, j, word, 0, m) {
+				return true
 			}
 		}
 	}
-	return -1, -1
+	return false
 }
 
 // 回溯
-func backTrace(board [][]byte, row, col int, char byte) {
-
+func backTrace(board [][]byte, rows, cols, rowStart, colStart int, word string, wordStart int, passed [][]bool) bool {
+	if rowStart >= rows || rowStart < 0 || colStart < 0 || colStart >= cols {
+		return false
+	}
+	if wordStart == len(word) {
+		return true
+	}
+	return false
 }
