@@ -29,11 +29,21 @@ func exist(board [][]byte, word string) bool {
 
 // 回溯
 func backTrace(board [][]byte, rows, cols, rowStart, colStart int, word string, wordStart int, passed [][]bool) bool {
-	if rowStart >= rows || rowStart < 0 || colStart < 0 || colStart >= cols {
+	if rowStart >= rows || rowStart < 0 || colStart < 0 || colStart >= cols ||
+		passed[rowStart][colStart] || word[wordStart] != board[rowStart][colStart] {
 		return false
 	}
-	if wordStart == len(word) {
+	if wordStart == len(word)-1 {
 		return true
 	}
+	passed[rowStart][colStart] = true
+	var flag bool = backTrace(board, rows, cols, rowStart+1, colStart, word, wordStart+1, passed) ||
+		backTrace(board, rows, cols, rowStart, colStart+1, word, wordStart+1, passed) ||
+		backTrace(board, rows, cols, rowStart-1, colStart, word, wordStart+1, passed) ||
+		backTrace(board, rows, cols, rowStart, colStart-1, word, wordStart+1, passed)
+	if flag {
+		return true
+	}
+	passed[rowStart][colStart] = false
 	return false
 }
