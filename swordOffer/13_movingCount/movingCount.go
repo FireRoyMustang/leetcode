@@ -15,7 +15,7 @@ func movingCount(m int, n int, k int) int {
 	for i := 0; i < m; i++ {
 		visited[i] = make([]bool, n)
 	}
-	return dfs(0, 0)
+	return dfs(0, 0, 0)
 }
 func dfs(m, n, lastSum int) int {
 	if m >= x || n >= y || lastSum > limit || visited[m][n] {

@@ -1,3 +1,7 @@
+package main
+
+import "container/list"
+
 type CQueue struct {
 	stack1, stack2 *list.List
 }
