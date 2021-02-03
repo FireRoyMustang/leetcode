@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"leetcode/tools"
+)
+
 // 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 //   Definition for a binary tree node.
 type TreeNode struct {
@@ -9,7 +14,9 @@ type TreeNode struct {
 }
 
 func main() {
-
+	test := []int{5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, 5, 1}
+	tree := tools.GenerateTree(test)
+	fmt.Println("Tree:", tools.LevelOrder(tree))
 }
 
 func levelOrder(root *TreeNode) []int {

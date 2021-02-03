@@ -5,13 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch",
+            "name": "Golang",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${file}",
-            "env": {},
-            "args": []
-        }
+            // "program": "${fileDirname}"
+            "program": "/home/shenyubo/gitrepo/leetcode/SwordOffer/34_pathSum"
+        },
     ]
 }
