@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	testExample := []int{2, 3, 4, 7, 0}
-	for _, test := range testExample {
-		fmt.Printf("numWays(%d):%d\n", test, numWays(test))
+	for i := 0; i < 10; i++ {
+		fmt.Printf("numWays(%d):%d\n", i, numWays(i))
 	}
 
 }

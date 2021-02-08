@@ -11,7 +11,7 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 	}
 	m := len(matrix[0])
 	row, col := 0, m-1
-	for row < n && col < m && row >= 0 && col >= 0 {
+	for row < n && col >= 0 {
 		if matrix[row][col] == target {
 			return true
 		} else if matrix[row][col] > target {

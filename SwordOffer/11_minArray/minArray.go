@@ -8,7 +8,7 @@ func minArray(numbers []int) int {
 	left, right := 0, length-1
 	mid := 0
 	for left < right {
-		mid = (left + right) / 2
+		mid = (left + right) >> 1
 		if numbers[mid] < numbers[right] {
 			right = mid
 		} else if numbers[mid] > numbers[right] {
