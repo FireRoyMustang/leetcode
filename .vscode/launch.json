@@ -9,8 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            // "program": "${fileDirname}"
-            "program": "/home/shenyubo/gitrepo/leetcode/SwordOffer/34_pathSum"
+            "program": "${fileDirname}"
         },
     ]
 }
