@@ -16,7 +16,7 @@ func main() {
 
 func getLeastNumbers(arr []int, k int) []int {
 	length := len(arr)
-	if length < k || k == 0 {
+	if k == 0 {
 		return []int{}
 	}
 	if length == k {

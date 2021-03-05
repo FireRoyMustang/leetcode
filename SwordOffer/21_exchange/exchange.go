@@ -19,9 +19,7 @@ func exchange(nums []int) []int {
 		for ptL < ptR && nums[ptR]%2 == 0 {
 			ptR--
 		}
-		tmp := nums[ptL]
-		nums[ptL] = nums[ptR]
-		nums[ptR] = tmp
+		nums[ptL], nums[ptR] = nums[ptR], nums[ptL]
 	}
 	return nums
 }

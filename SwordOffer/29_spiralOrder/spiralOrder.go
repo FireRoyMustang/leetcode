@@ -14,7 +14,7 @@ func spiralOrder(matrix [][]int) []int {
 	cols := len(matrix[0])
 	res := make([]int, rows*cols)
 	if cols == 0 {
-		return make([]int, 0)
+		return res
 	}
 	up, down, left, right, ptr := 0, rows-1, 0, cols-1, 0
 	for {

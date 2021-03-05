@@ -1,5 +1,7 @@
 package main
 
+// 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
+// 请你找出并返回这两个正序数组的 中位数 。
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	len1 := len(nums1)
 	len2 := len(nums2)
@@ -11,6 +13,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return float64(getKthNum(nums1, nums2, mid)+getKthNum(nums1, nums2, mid+1)) / 2
 }
 
+// k代表第i个数而不是坐标为i
 func getKthNum(nums1, nums2 []int, k int) int {
 	index1, index2 := 0, 0
 	len1 := len(nums1)
@@ -37,7 +40,6 @@ func getKthNum(nums1, nums2 []int, k int) int {
 			index2 = newIndex2 + 1
 		}
 	}
-	return 0
 }
 
 func min(a, b int) int {

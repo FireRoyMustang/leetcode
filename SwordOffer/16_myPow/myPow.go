@@ -1,5 +1,8 @@
 package main
 
+// 实现函数double Power(double base, int exponent)，
+// 求base的exponent次方。不得使用库函数，同时不需要考虑大数问题。
+
 import "fmt"
 
 func main() {
@@ -20,7 +23,7 @@ func myPow(x float64, n int) float64 {
 			ans *= x
 		}
 		x *= x
-		n /= 2
+		n >>= 1
 	}
 	return ans
 }

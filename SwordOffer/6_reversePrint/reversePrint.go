@@ -12,17 +12,29 @@ func main() {
 }
 
 func reversePrint(head *ListNode) []int {
-	length := 0
-	var node *ListNode = head
+	node := head
+	res := make([]int, 0)
 	for node != nil {
-		length++
+		res = append(res, node.Val)
 		node = node.Next
 	}
-	ans := make([]int, length)
-	for head != nil {
-		length--
-		ans[length] = head.Val
-		head = head.Next
+	for i, j := 0, len(res)-1; i < j; {
+		res[i], res[j] = res[j], res[i]
+		i++
+		j--
 	}
-	return ans
+	return res
+	// length := 0
+	// var node *ListNode = head
+	// for node != nil {
+	// 	length++
+	// 	node = node.Next
+	// }
+	// ans := make([]int, length)
+	// for head != nil {
+	// 	length--
+	// 	ans[length] = head.Val
+	// 	head = head.Next
+	// }
+	// return ans
 }

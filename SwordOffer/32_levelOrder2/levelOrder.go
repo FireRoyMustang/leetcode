@@ -1,5 +1,7 @@
 package main
 
+// 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -24,6 +26,7 @@ func levelOrder(root *TreeNode) [][]int {
 		res = append(res, floor)
 		for size != 0 {
 			node := queue[0]
+			queue = queue[1:]
 			floor[index] = node.Val
 			index++
 			if node.Left != nil {
@@ -32,7 +35,6 @@ func levelOrder(root *TreeNode) [][]int {
 			if node.Right != nil {
 				queue = append(queue, node.Right)
 			}
-			queue = queue[1:]
 			size--
 		}
 	}

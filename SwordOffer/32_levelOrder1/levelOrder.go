@@ -6,7 +6,6 @@ import (
 )
 
 // 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
-//   Definition for a binary tree node.
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -30,6 +29,7 @@ func levelOrder(root *TreeNode) []int {
 		size := len(queue)
 		for size != 0 {
 			node := queue[0]
+			queue = queue[1:]
 			res = append(res, node.Val)
 			if node.Left != nil {
 				queue = append(queue, node.Left)
@@ -37,7 +37,6 @@ func levelOrder(root *TreeNode) []int {
 			if node.Right != nil {
 				queue = append(queue, node.Right)
 			}
-			queue = queue[1:]
 			size--
 		}
 	}

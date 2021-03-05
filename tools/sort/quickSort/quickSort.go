@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	test := []int{2, 8, 7, 4, 6, 3}
@@ -8,7 +10,6 @@ func main() {
 	fmt.Println(test)
 }
 
-// 快排
 func QuickSort(arr []int) {
 	quick(arr, 0, len(arr)-1)
 }

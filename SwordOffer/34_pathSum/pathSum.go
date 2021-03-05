@@ -4,7 +4,8 @@ import (
 	"fmt"
 )
 
-// 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
+// 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。
+// 从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
 // https://blog.csdn.net/sgsgy5/article/details/81590184
 // append
 type TreeNode struct {
@@ -17,8 +18,7 @@ func main() {
 	test := []int{5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, 5, 1}
 	tree := GenerateTree(test)
 	fmt.Println(pathSum(tree, 22))
-	var i int = 5
-	i += 1
+
 }
 
 func pathSum(root *TreeNode, sum int) [][]int {
@@ -30,7 +30,6 @@ func pathSum(root *TreeNode, sum int) [][]int {
 	return res
 }
 
-// append不会对上层函数的path产生影响
 func backTrace(root *TreeNode, path []int, sum int, res *[][]int) {
 	if root == nil {
 		return

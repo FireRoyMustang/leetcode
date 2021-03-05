@@ -23,7 +23,6 @@ func main() {
 	mid := Constructor()
 	for i := 0; i < len(test); i++ {
 		mid.AddNum(test[i])
-		fmt.Println("minHeap", mid.minHeap.elements[0])
 		fmt.Println(mid.FindMedian())
 	}
 }
@@ -46,7 +45,7 @@ func (this *MedianFinder) AddNum(num int) {
 	}
 	maxHeapLen := len(this.maxHeap.elements)
 	if minHeapLen == maxHeapLen {
-		if num > this.minHeap.elements[0] {
+		if num >= this.maxHeap.elements[0] {
 			heap.Push(this.minHeap, num)
 		} else {
 			heap.Push(this.maxHeap, num)

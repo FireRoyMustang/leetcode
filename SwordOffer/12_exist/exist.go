@@ -40,9 +40,6 @@ func backTrace(board [][]byte, rows, cols, rowStart, colStart int, word string, 
 		backTrace(board, rows, cols, rowStart, colStart+1, word, wordStart+1, passed) ||
 		backTrace(board, rows, cols, rowStart-1, colStart, word, wordStart+1, passed) ||
 		backTrace(board, rows, cols, rowStart, colStart-1, word, wordStart+1, passed)
-	if flag {
-		return true
-	}
 	passed[rowStart][colStart] = false
-	return false
+	return flag
 }

@@ -1,11 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"strings"
+)
 
 func main() {
-	var i int = 1
-	if i == 2 {
-		fmt.Println(1)
-	}
+	var build strings.Builder
 
 }
