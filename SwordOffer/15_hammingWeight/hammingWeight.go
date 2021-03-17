@@ -7,6 +7,7 @@ import "fmt"
 func main() {
 	i := 9
 	fmt.Printf("%d:%d\n", i, hammingWeight(uint32(i)))
+	fmt.Printf("%d:%d\n", -1, NumberOf1(-1))
 }
 
 func hammingWeight(num uint32) int {
@@ -16,4 +17,15 @@ func hammingWeight(num uint32) int {
 		num = num & (num - 1)
 	}
 	return ans
+}
+
+func NumberOf1(n int) int {
+	// write code here
+	res := 0
+	for n != 0 {
+		n &= n - 1
+		fmt.Println(n)
+		res++
+	}
+	return res
 }
