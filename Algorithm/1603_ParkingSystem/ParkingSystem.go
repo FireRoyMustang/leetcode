@@ -12,17 +12,24 @@ package main
 // 如果没有空车位，请返回 false ，否则将该车停入车位并返回 true 。
 
 type ParkingSystem struct {
-	bigP   []int
-	smallP []int
-	midP   []int
+	bigP, smallP, midP int
 }
 
 func Constructor(big int, medium int, small int) ParkingSystem {
-	big
+	return ParkingSystem{big, small, medium}
 }
 
 func (this *ParkingSystem) AddCar(carType int) bool {
-
+	switch carType {
+	case 1:
+		this.bigP--
+	case 2:
+		this.midP--
+	case 3:
+		this.smallP--
+	default:
+	}
+	return false
 }
 
 /**

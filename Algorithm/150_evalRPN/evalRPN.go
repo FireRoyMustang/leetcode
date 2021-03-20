@@ -17,8 +17,8 @@ func main() {
 	// fmt.Println('-' - '0') // -3
 	// fmt.Println('*' - '0') // -6
 	// fmt.Println('/' - '0') // -1
-	fmt.Println(evalRPN([]string{"2", "1", "+", "3", "*"}))
-	// fmt.Println(evalRPN([]string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}))
+	// fmt.Println(evalRPN([]string{"2", "1", "+", "3", "*"}))
+	fmt.Println(evalRPN([]string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}))
 	// fmt.Println(evalRPN([]string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}))
 }
 
@@ -26,7 +26,7 @@ func evalRPN(tokens []string) int {
 	stack := make([]int, 0)
 	for i := 0; i < len(tokens); i++ {
 		token := tokens[i]
-		if token[0] >= '0' { // 数字
+		if token[0] >= '0' || len(token) > 1 { // 数字
 			num, _ := strconv.Atoi(token)
 			stack = append(stack, num)
 		} else { // 操作符
