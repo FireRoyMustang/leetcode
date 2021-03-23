@@ -1,38 +1,37 @@
 package main
 
 // 老师想给孩子们分发糖果，有 N 个孩子站成了一条直线，老师会根据每个孩子的表现，预先给他们评分。
-
 // 你需要按照以下要求，帮助老师给这些孩子分发糖果：
 
 // 每个孩子至少分配到 1 个糖果。
 // 相邻的孩子中，评分高的孩子必须获得更多的糖果。
 // 那么这样下来，老师至少需要准备多少颗糖果呢？
-func candy(ratings []int) int {
-	n := len(ratings)
-	ans, inc, dec, pre := 1, 1, 0, 1
-	for i := 1; i < n; i++ {
-		if ratings[i] >= ratings[i-1] {
-			dec = 0
-			if ratings[i] == ratings[i-1] {
-				pre = 1
-			} else {
-				pre++
-			}
-			ans += pre
-			inc = pre
-		} else {
-			dec++
-			if dec == inc {
-				dec++
-			}
-			ans += dec
-			pre = 1
-		}
-	}
-	return ans
-}
+// func candy(ratings []int) int {
+// 	n := len(ratings)
+// 	ans, inc, dec, pre := 1, 1, 0, 1
+// 	for i := 1; i < n; i++ {
+// 		if ratings[i] >= ratings[i-1] {
+// 			dec = 0
+// 			if ratings[i] == ratings[i-1] {
+// 				pre = 1
+// 			} else {
+// 				pre++
+// 			}
+// 			ans += pre
+// 			inc = pre
+// 		} else {
+// 			dec++
+// 			if dec == inc {
+// 				dec++
+// 			}
+// 			ans += dec
+// 			pre = 1
+// 		}
+// 	}
+// 	return ans
+// }
 
-func candy2(ratings []int) (ans int) {
+func candy(ratings []int) (ans int) {
 	n := len(ratings)
 	left := make([]int, n)
 	for i, r := range ratings {
