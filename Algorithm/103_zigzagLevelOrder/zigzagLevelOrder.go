@@ -26,7 +26,6 @@ func zigzagLevelOrder(root *TreeNode) (ans [][]int) {
 				queue = append(queue, node.Right)
 			}
 		}
-		// 本质上和层序遍历一样，我们只需要把奇数层的元素翻转即可
 		if level%2 == 1 {
 			for i, n := 0, len(vals); i < n/2; i++ {
 				vals[i], vals[n-1-i] = vals[n-1-i], vals[i]
