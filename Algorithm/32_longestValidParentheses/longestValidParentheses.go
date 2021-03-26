@@ -9,6 +9,7 @@ func main() {
 		fmt.Println(longestValidParentheses(test))
 	}
 }
+
 func longestValidParentheses(s string) int {
 	left, right, maxLength := 0, 0, 0
 	for i := 0; i < len(s); i++ {
